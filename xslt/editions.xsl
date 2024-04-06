@@ -26,8 +26,9 @@
         <xsl:value-of select="data(tei:TEI/@xml:id)"/>
     </xsl:variable>
     <xsl:variable name="link">
-        <xsl:value-of select="replace($teiSource/editions, '.xml', '.html')"/>
+        <xsl:value-of select="replace($teiSource, 'editions/(.*).xml', 'editions/$1.html')"/>
     </xsl:variable>
+    
     <xsl:variable name="doc_title">
         <xsl:value-of select=".//tei:titleStmt/tei:title[1]/text()"/>
     </xsl:variable>
